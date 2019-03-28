@@ -7,7 +7,7 @@ function getDishes() {
 }
 
 function getDishById(id) {
-	return db('dishes').where({ id });
+	return db('dishes').where({ id }).first();
 }
 
 function addDish(dish) {
