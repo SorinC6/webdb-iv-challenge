@@ -8,7 +8,7 @@
 		"initdb": "knex init",
 		"tableDish": "knex migrate:make createDishTable",
 		"tableRecipe": "knex migrate:make createRecipesTable",
-		"tableIngredients": "knex migrate:make createStudentsTable",
+		"tableIngredients": "knex migrate:make createIngredientsTable",
 		"tableInstruction": "knex migrate:make createInstructionsTable",
 		"migrate": "knex migrate:latest",
 		"rollback": "knex migrate:rollback",
