@@ -13,11 +13,20 @@ function get(id) {
 		return dishes;
 	});
 }
+
+function getDish(id) {
+	return db
+		.select('id', 'dishes.dish_name', 'recipes.recipes_name')
+		.from('dishes')
+		.join('recipes', 'dishes.id', '=', 'recipes.id');
+}
+
 function add(dish) {
 	return db('dishes').insert(dish).then(([ id ]) => this.get(id));
 }
 
 module.exports = {
 	get,
+	getDish,
 	add
 };
