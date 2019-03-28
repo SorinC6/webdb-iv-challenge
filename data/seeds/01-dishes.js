@@ -3,11 +3,11 @@ exports.seed = function(knex, Promise) {
 	return knex('dishes').del().then(function() {
 		// Inserts seed entries
 		return knex('dishes').insert([
-			{ id: 1, dish_name: 'Chocolate Cake' },
-			{ id: 2, dish_name: 'Eggs Benedict' },
-			{ id: 3, dish_name: 'Thumbprint Cookies' },
-			{ id: 4, dish_name: 'Tacos' },
-			{ id: 5, dish_name: 'Hamburger' }
+			{ dish_name: 'Chocolate Cake' },
+			{ dish_name: 'Eggs Benedict' },
+			{ dish_name: 'Thumbprint Cookies' },
+			{ dish_name: 'Tacos' },
+			{ dish_name: 'Hamburger' }
 		]);
 	});
 };

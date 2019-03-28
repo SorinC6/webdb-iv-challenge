@@ -4,8 +4,7 @@ const db = knex(dbConfig.development);
 
 function get(id) {
 	if (id) {
-		return db(dishes).where('id', id);
-		then((dish) => {
+		return db('dishes').where('id', id).then((dish) => {
 			return dish[0];
 		});
 	}
@@ -14,7 +13,6 @@ function get(id) {
 		return dishes;
 	});
 }
-
 function add(dish) {
 	return db('dishes').insert(dish).then(([ id ]) => this.get(id));
 }
