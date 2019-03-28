@@ -12,6 +12,8 @@ exports.up = function(knex, Promise) {
 			.inTable('recipes')
 			.onDelete('CASCADE')
 			.onUpdate('CASCADE');
+
+		table.timestamps(true, true);
 	});
 };
 
