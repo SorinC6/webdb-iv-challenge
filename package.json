@@ -5,7 +5,21 @@
 	"main": "index.js",
 	"scripts": {
 		"server": "nodemon",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"initdb": "knex init",
+		"tableDish": "knex migrate:make createDishTable",
+		"tableRecipe": "knex migrate:make createRecipesTable",
+		"tableIngredients": "knex migrate:make createStudentsTable",
+		"tableInstruction": "knex migrate:make createInstructionsTable",
+		"migrate": "knex migrate:latest",
+		"rollback": "knex migrate:rollback",
+		"seedDishes": "knex seed:make 01-dishes",
+		"seedRecipes": "knex seed:make 02-recipes",
+		"seedIngredients": "knex seed:make 03-ingredients",
+		"seedInstructions": "knex seed:make 04-instructions",
+		"runseedDishes": "knex seed:run 01-dishes",
+		"runseedRecipes": "knex seed:run 02-recipes",
+		"runseedIngredients": "knex seed:run 03-ingredients",
+		"runseedInstructions": "knex seed:run 04-instructions"
 	},
 	"repository": {
 		"type": "git",
