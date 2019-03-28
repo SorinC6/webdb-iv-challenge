@@ -14,7 +14,6 @@ function get(id) {
 	});
 }
 
-
 function getRecipes(id) {
 	return db
 		.select('recipes.id', 'recipes.recipe_name', 'dishes.dish_name')

@@ -2,10 +2,10 @@ exports.up = function(knex, Promise) {
 	return knex.schema.createTable('recipes', (table) => {
 		table.increments();
 
-		table.string('recipe_name').notNullable().unique();
+		table.string('recipe_name', 128).notNullable().unique();
 		table.integer('dish_id').unsigned().references('id').inTable('dishes').onDelete('CASCADE').onUpdate('CASCADE');
 
-		table.timestamps(true, true);
+		//table.timestamps(true, true);
 	});
 };
 

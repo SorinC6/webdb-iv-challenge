@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-// const knex = require('knex');
-// const dbConfig = require('../../knexfile');
-// const db = knex(dbConfig.development);
+const knex = require('knex');
+const dbConfig = require('../../knexfile');
+const db = knex(dbConfig.development);
 
 const dbHelper = require('../../data/dishesModel');
 
@@ -29,12 +29,21 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
+router.get('/test/:id', async (req, res) => {
+	try {
+	  const allDishes = await DB.getDishes();
+	  res.status(200).json(allDishes);
+	} catch (error) {
+	  res.status(500).json({ error });
+	}
+  });
+
 router.post('/', async (req, res) => {
 	const body = req.body;
 	if (body.dish_name) {
 		try {
 			const result = await dbHelper.add(body);
-			//const dish = await db('dishes').where({ id: result }).first();
+			const dish = await db('dishes').where({ id: result }).first();
 			res.status(201).json(result);
 		} catch (error) {
 			res.status(500).json({ error: 'error trying to save the dish in database' });

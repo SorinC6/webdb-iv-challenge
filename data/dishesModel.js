@@ -25,6 +25,8 @@ function add(dish) {
 	return db('dishes').insert(dish).then(([ id ]) => this.get(id));
 }
 
+function getAllDishes() {}
+
 module.exports = {
 	get,
 	getDish,
