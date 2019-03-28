@@ -9,6 +9,6 @@ server.use(helmet());
 server.use(express.json());
 
 //server.use(routes)
-server.use(dishesRouters);
+server.use('/api/dishes', dishesRouters);
 
 module.exports = server;
