@@ -1,0 +1,45 @@
+{
+	"name": "webdb-iv-challenge",
+	"version": "1.0.0",
+	"description": "## Topics",
+	"main": "index.js",
+	"scripts": {
+		"server": "nodemon",
+		"initdb": "knex init",
+		"tableDish": "knex migrate:make createDishTable",
+		"tableRecipe": "knex migrate:make createRecipesTable",
+		"tableIngredients": "knex migrate:make createIngredientsTable",
+		"tableInstruction": "knex migrate:make createInstructionsTable",
+		"migrate": "knex migrate:latest",
+		"rollback": "knex migrate:rollback",
+		"seedDishes": "knex seed:make 01-dishes",
+		"seedRecipes": "knex seed:make 02-recipes",
+		"seedIngredients": "knex seed:make 03-ingredients",
+		"seedInstructions": "knex seed:make 04-instructions",
+		"runseedDishes": "knex seed:run 01-dishes",
+		"runseedRecipes": "knex seed:run 02-recipes",
+		"runseedIngredients": "knex seed:run 03-ingredients",
+		"runseedInstructions": "knex seed:run 04-instructions"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SorinC6/webdb-iv-challenge.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/SorinC6/webdb-iv-challenge/issues"
+	},
+	"homepage": "https://github.com/SorinC6/webdb-iv-challenge#readme",
+	"dependencies": {
+		"dotenv": "^7.0.0",
+		"express": "^4.16.4",
+		"helmet": "^3.16.0",
+		"knex": "^0.16.3",
+		"sqlite3": "^4.0.6"
+	},
+	"devDependencies": {
+		"nodemon": "^1.18.10"
+	}
+}
